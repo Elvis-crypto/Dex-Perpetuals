@@ -7,7 +7,7 @@ altair
 requests
 
 
-pathlib
+
 time
 urllib
 json
