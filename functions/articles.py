@@ -7,12 +7,12 @@ Created on Sun Jan 13 2023
 
 import os
 import glob
-import shutil
 
 if __name__ == "__main__":
     os.chdir('C:\\Crypto_Analysis\\PalmSwap\\derivatives-dashboard\\heroku')
     
 dst = '.\\readDir\\actArticle.py'
+ImHome = os.path.exists('C:\\Crypto_Analysis\\PalmSwap\\derivatives-dashboard\\heroku')
 
 
 def getArticles():
@@ -32,8 +32,10 @@ def getArticles():
 
 def prepArticle(src):
     # src is the source path for the actual article's python file
-    shutil.copyfile(src, dst)
-    
+    if(ImHome):
+        os.system(f'''copy {src} {dst}''')
+    else:
+        os.system(f'''cp {src} {dst}''')
 
 if __name__ == "__main__":
     getArticles()
