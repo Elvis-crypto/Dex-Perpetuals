@@ -5,7 +5,7 @@ pandasql
 datetime
 altair
 requests
-shutil
+
 os
 pathlib
 time
