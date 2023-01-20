@@ -21,10 +21,10 @@ class Source():
 
 
 protocol2Loader = {
-    'GMX':'.\\tables\\gmx.csv',
-    'dYdX':'.\\tables\\dydx.csv',
-    'Perpetual Protocol':'.\\tables\\perpetual-protocol.csv',
-    'ApolloX':'.\\tables\\apollox.csv'
+    'GMX':'./tables/gmx.csv',
+    'dYdX':'./tables/dydx.csv',
+    'Perpetual Protocol':'./tables/perpetual-protocol.csv',
+    'ApolloX':'./tables/apollox.csv'
     }
 protocol2URL = {
     'GMX':'https://api.llama.fi/dataset/gmx.csv',
@@ -80,7 +80,7 @@ def readFSjson(url):
 
 
 if __name__ == "__main__":
-    os.chdir('C:\\Crypto_Analysis\\PalmSwap\\derivatives-dashboard\\heroku')
+    os.chdir('C:/Crypto_Analysis/PalmSwap/derivatives-dashboard/heroku')
     reloadInterval = 24
     for query in FS2Loader:
         APILoader(query,FS2URL, FS2Loader, reloadInterval)

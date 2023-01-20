@@ -8,18 +8,19 @@ Created on Sun Jan 13 2023
 import os
 
 if __name__ == "__main__":
-    os.chdir('C:\\Crypto_Analysis\\PalmSwap\\derivatives-dashboard\\heroku')
-    
-dst = '.\\readDir\\actArticle.py'
-ImHome = os.path.exists('C:\\Crypto_Analysis\\PalmSwap\\derivatives-dashboard\\heroku')
+    os.chdir('C:/Crypto_Analysis/PalmSwap/derivatives-dashboard/heroku')
+
+ImHome = os.path.exists('C:/Crypto_Analysis/PalmSwap/derivatives-dashboard/heroku')    
+dst = './readDir/actArticle.py'
+
 
 
 def get_files():
     ret_list = []
-    for file in os.listdir('.\\articles'):
+    for file in os.listdir('./articles'):
         if '.' in file:
             if (file.split('.')[1] == 'py'):
-                ret_list.append('.\\articles\\'+file)
+                ret_list.append('./articles/'+file)
     return ret_list
 
 def getArticles():
@@ -28,9 +29,9 @@ def getArticles():
     artNames2FNames = {}
     artNames2Paths = {}
     for file in get_files():
-        artNum = file.split('_',maxsplit=1)[0].split('\\A')[1]
+        artNum = file.split('_',maxsplit=1)[0].split('/A')[1]
         artName = file.split('_',maxsplit=1)[1].split('.py')[0]
-        artFName = file.split('\\',maxsplit=1)[1].split('.py')[0]
+        artFName = file.split('/',maxsplit=1)[1].split('.py')[0]
         artNums2Names[artNum] = artName
         artNames2FNames[artName] = artFName
         artNames2Paths[artName] = file
