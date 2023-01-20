@@ -5,3 +5,10 @@ pandasql
 datetime
 altair
 requests
+
+importlib==4.8.1
+os
+pathlib==2.3.6
+time
+urllib==1.26.7
+json==0.9.6
