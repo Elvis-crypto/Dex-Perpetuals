@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run Perpetuals.py
+web: sh setup.sh && streamlit run Home.py
