@@ -5,5 +5,4 @@ pandasql
 datetime
 altair
 requests
-urllib
 json
