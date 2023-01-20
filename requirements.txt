@@ -4,7 +4,6 @@ plost
 pandasql
 datetime
 altair
-os
 pathlib
 time
 requests
