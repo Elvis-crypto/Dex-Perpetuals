@@ -5,16 +5,16 @@ Created on Sun Jan 08 2023
 @author: Elvis Crypto
 """
 
-if __name__ == "__main__":
-    import os
+# if __name__ == "__main__":
+#     import os
     
-    os.chdir('C:\\Crypto_Analysis\\PalmSwap\\derivatives-dashboard\\heroku')
-    protocol2Loader = {
-        'GMX':'..\\tables\\gmx.csv',
-        'dYdX':'..\\tables\\dydx.csv',
-        'Perpetual Protocol':'..\\tables\\perpetual-protocol.csv',
-        'ApolloX':'..\\tables\\apollox.csv'
-        }
+#     os.chdir('C:\\Crypto_Analysis\\PalmSwap\\derivatives-dashboard\\heroku')
+#     protocol2Loader = {
+#         'GMX':'..\\tables\\gmx.csv',
+#         'dYdX':'..\\tables\\dydx.csv',
+#         'Perpetual Protocol':'..\\tables\\perpetual-protocol.csv',
+#         'ApolloX':'..\\tables\\apollox.csv'
+#         }
 
 from functions.sources import checkDatasets, protocol2Loader, readFSjson, FS2Loader
 from functions.readLlama import readMultiLlama
