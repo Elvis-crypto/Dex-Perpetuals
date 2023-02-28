@@ -16,7 +16,7 @@ Created on Sun Jan 08 2023
 #         'ApolloX':'..\\tables\\apollox.csv'
 #         }
 
-from functions.sources import checkDatasets, protocol2Loader, readFSjson, FS2Loader
+from functions.sources import checkDatasets, protocol2Loader, readJson, FS2Loader
 from functions.readLlama import readMultiLlama
 from functions.str_panels import tSeriesLlamaBreakdown
 from functions.processLlama import processLlamaIndiv

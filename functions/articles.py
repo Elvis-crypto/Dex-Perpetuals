@@ -7,11 +7,12 @@ Created on Sun Jan 13 2023
 
 import os
 
-if __name__ == "__main__":
-    os.chdir('C:/Crypto_Analysis/PalmSwap/derivatives-dashboard/heroku')
+# if __name__ == "__main__":
+#     os.chdir('C:/Crypto_Analysis/PalmSwap/derivatives-dashboard/heroku')
 
 ImHome = os.path.exists('C:/Crypto_Analysis/PalmSwap/derivatives-dashboard/heroku')    
 dst = './readDir/actArticle.py'
+dst2 = '.\\readDir\\actArticle.py'
 
 
 
@@ -30,7 +31,7 @@ def getArticles():
     artNames2Paths = {}
     for file in get_files():
         artNum = file.split('_',maxsplit=1)[0].split('/A')[1]
-        artName = file.split('_',maxsplit=1)[1].split('.py')[0]
+        artName = file.split('_',maxsplit=1)[1].split('.py')[0].replace('_',' ')
         artFName = file.split('/',maxsplit=1)[1].split('.py')[0]
         artNums2Names[artNum] = artName
         artNames2FNames[artName] = artFName
@@ -41,9 +42,18 @@ def getArticles():
 def prepArticle(src):
     # src is the source path for the actual article's python file
     if(ImHome):
-        os.system(f'''copy {src} {dst}''')
+        src2 = src.replace('/','\\')
+        if(os.path.exists(dst2)):
+            print()
+            print(f'''del {dst2}''')
+            os.system(f'''del {dst2}''')
+        print()
+        print(f'''copy {src2} {dst2} /Y''')
+        os.system(f'''copy {src2} {dst2} /Y''')
     else:
         os.system(f'''cp {src} {dst}''')
 
-if __name__ == "__main__":
-    print(getArticles())
+# if __name__ == "__main__":
+#     print(getArticles())
+#     src = 'C:/Crypto_Analysis/PalmSwap/derivatives-dashboard/heroku/articles/"A01_Perpetuals in Crypto and DeFi.py"'
+#     prepArticle(src)

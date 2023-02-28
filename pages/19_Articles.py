@@ -24,6 +24,12 @@ st.sidebar.header('Research articles ')
 
 # ''')   
 selectedArticle = st.sidebar.selectbox('Please select an article to load', list(artNums2Names.values()),index=0)
+
+st.sidebar.markdown('''
+            If the selected article does not load, please click in the article area and hit 'r'
+            '''
+    )
+
 # modArticle = importlib.import_module('articles.'+artNames2FNames[selectedArticle])
 # The function below is default, I might be able to make it work if I must
 # modArticle = __import__('articles.'+artNames2FNames[selectedArticle], globals=None, locals=None, fromlist=(), level=1)

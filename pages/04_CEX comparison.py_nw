@@ -1,0 +1,54 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jan 23 2023
+
+@author: Elvis Crypto
+"""
+
+if __name__ == "__main__":
+    import os
+    
+    os.chdir('C:/Crypto_Analysis/PalmSwap/derivatives-dashboard/heroku')
+
+from functions.sources import checkDatasets, readCGDerivatives
+from functions.str_panels import tSeriesGeneralBreakdown, CompositionPie
+from functions.processLlama import processLlamaIndiv
+import streamlit as st
+import plost
+import altair as alt
+
+#Refresh Datasets as necessary
+checkDatasets(reloadInterval=24)
+
+st.set_page_config(layout='wide', initial_sidebar_state='expanded')
+
+# Sidebar stuff
+st.sidebar.header('DeFi Perpetuals Dashboard ')
+
+st.sidebar.markdown('''
+    ---
+''')
+st.sidebar.subheader('''
+🗝️ Key takeaways 🗝️
+''')
+
+
+st.sidebar.markdown('''
+---
+Created with ❤️ by [@Elv1s_Crypto](https://twitter.com/Elv1s_Crypto/).
+---
+Data📊 by [DefiLlama](https://defillama.com/).
+''')   
+
+cg_exchange = readCGDerivatives()
+cg_exchange_dropped = cg_exchange.dropna(subset=['open_interest_btc'])
+
+st.markdown(f'''
+CEX dataset test
+---
+''')
+
+
+CompositionPie(state_df=cg_exchange, Category='DeFi', col2Sum='open_interest_btc', outName='Open Interest (btc)')
+CompositionPie(state_df=cg_exchange, Category='name', col2Sum='open_interest_btc', outName='Open Interest (btc)')
+

@@ -52,7 +52,8 @@ def correctLlama(df):
         offs+=1
     elif(protocol=='ApolloX'):
         # This is mostly fine except for some unncessary duplicates cols
-        corr.drop(columns=corr.columns[[3,6,13,14,29,30]],inplace=True)
+        # corr.drop(columns=corr.columns[[3,6,13,14,29,30]],inplace=True)
+        corr.drop(columns=corr.columns[[4,8,25,26,61,62]],inplace=True)
     elif(protocol=='dYdX'):
         # total same as ethereum where exists
         corr.iloc[5:,1] = corr.iloc[5:,2]
